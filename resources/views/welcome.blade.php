@@ -26,7 +26,6 @@
         <style>
             html, body {
                 background-color: aliceblue;
-                color: tomato;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -58,8 +57,9 @@
             }
 
             .title {
-                font-size: 84px;
-                text-shadow: 2px 2px black;
+                font-size: 95px;
+                color: white;
+                text-shadow: 3px 3px gray;
             }
 
             .links > a {
@@ -75,15 +75,22 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .bg {
+                background-image: url('/images/background.jpg');
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
         </style>
     </head>
     <body>
          @include('layouts.nav')
 
-        <div class="flex-center position-ref full-height">
+        <div class="position-ref full-height bg">
            
 
-            <div class="content">
+            <div class="content" >
                 <div class="title m-b-md">
                     Easy Quiz
                 </div>
