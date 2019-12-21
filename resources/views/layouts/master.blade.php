@@ -31,24 +31,24 @@
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Easy Quiz</div>
+    <div class="lightseagreen border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading text-light font-weight-bold">Easy Quiz</div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Make New Quiz</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">All Quizes</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Users</a>
+        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light">Make New Quiz</a>
+        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light">All Quizes</a>
+        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light">Users</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+    <div id="page-content-wrapper" style="background-color:aliceblue">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+      <nav class="navbar navbar-expand-lg navbar-light lightseagreen border-bottom navbar-dark">
+        <button class="btn custom-button" id="menu-toggle">Toggle Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon "></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -56,7 +56,7 @@
            
            
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ Auth::user()->name }} <span class="caret"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

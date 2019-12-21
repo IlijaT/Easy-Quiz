@@ -8,13 +8,12 @@
 @import '~bootstrap/scss/bootstrap';
 
 .custom-button{
-    border-radius: 6px; 
+    border-radius: 4px; 
     background-color: tomato; 
     color:white;
     text-transform: none;
     min-width: 100px;
     border: 1px solid transparent;
-    font-family: "als_schlange_sansregular", sans-serif;
     font-size: 14px;
     vertical-align: middle;
     text-align: center;
@@ -23,7 +22,19 @@
     margin: 0;
     font-weight: bold;
     color: #fff;
-    line-height: 19px;
+    line-height: 16px;
     padding: 0 16px;
     box-sizing: border-box;
+}
+
+.aliceblue {
+    background-color: aliceblue
+}
+
+.lightseagreen {
+    background-color: lightseagreen
+}
+
+.tomato {
+    background-color: tomato
 }

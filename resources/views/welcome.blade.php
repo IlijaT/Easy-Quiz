@@ -59,6 +59,7 @@
 
             .title {
                 font-size: 84px;
+                text-shadow: 2px 2px black;
             }
 
             .links > a {
