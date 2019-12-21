@@ -11376,6 +11376,18 @@ a.text-dark:focus {
   box-sizing: border-box;
 }
 
+.quiz-footer {
+  padding: 0.5rem 0;
+  color: white;
+  text-align: center;
+  background-color: lightseagreen;
+  border-top: 0.05rem solid #e5e5e5;
+}
+
+.quiz-footer p:last-child {
+  margin-bottom: 0;
+}
+
 .aliceblue {
   background-color: aliceblue;
 }

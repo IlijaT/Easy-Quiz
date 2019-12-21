@@ -22,7 +22,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
+    
     <div id="app" style="background-color: aliceblue;">
         @include('layouts.nav')
 
@@ -30,5 +32,7 @@
             @yield('content')
         </main>
     </div>
+
 </body>
+
 </html>
