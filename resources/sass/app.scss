@@ -9,7 +9,7 @@
 
 .custom-button{
     border-radius: 4px; 
-    background-color: tomato; 
+    background-color:tomato;
     color:white;
     text-transform: none;
     min-width: 100px;
@@ -27,8 +27,18 @@
     box-sizing: border-box;
 }
 
+.custom-button-green {
+    background-color:lightseagreen; 
+  }
 
- .quiz-footer {
+.custom-button-blue {
+    background-color:aliceblue; 
+    color: gray;
+    border: 1px solid grey;
+
+}
+
+.quiz-footer {
     padding: 0.5rem 0;
     color:white;
     text-align: center;

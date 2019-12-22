@@ -11376,6 +11376,16 @@ a.text-dark:focus {
   box-sizing: border-box;
 }
 
+.custom-button-green {
+  background-color: lightseagreen;
+}
+
+.custom-button-blue {
+  background-color: aliceblue;
+  color: gray;
+  border: 1px solid grey;
+}
+
 .quiz-footer {
   padding: 0.5rem 0;
   color: white;

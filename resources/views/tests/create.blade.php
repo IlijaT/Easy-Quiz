@@ -6,21 +6,21 @@
         <div class="col-md-12">
             <div class="card aliceblue" style="border:none">
                 <div>
-                   <h2>Create New Test</h2>
+                   <h2 class="text-center">Create New Test</h2>
                 </div>
-
-                <div class="card-body mt-4">
+                <hr>
+                <div class="mt-4">
                    
                     <form method="POST" action="{{ route('tests.store') }}">
                         @csrf
                         <div class="form-group">
                             <label for="title">Test title</label>
-                            <input type="text" class="form-control" id="title" placeholder="Test title..." name="title">
+                            <input value="{{ old('title') }}" type="text" class="form-control" id="title" placeholder="Test title..." name="title" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="desc">Test descrition</label>
-                            <textarea class="form-control" id="desc" rows="5" name="description" placeholder="Short description about test..."></textarea>
+                            <textarea class="form-control" id="desc" rows="5" name="description" placeholder="Short description about test...">{{ old('description') }}</textarea>
                         </div>
                         
                         <div class="d-flex">
@@ -28,6 +28,7 @@
                         </div>
 
                     </form>
+                    @include('layouts.errors')
                 </div>
             </div>
         </div>

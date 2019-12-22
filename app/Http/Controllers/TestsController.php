@@ -14,12 +14,11 @@ class TestsController extends Controller
         $this->middleware('admin', ['except' => ['index', 'show']]);
 
     }
-
-
     
     public function index()
     {
-        dd('tests.index');
+        $tests = Test::all();
+        return view('tests.index', compact('tests'));
     }
 
     
@@ -31,13 +30,22 @@ class TestsController extends Controller
     
     public function store(Request $request)
     {
-        // dd(request()->all());
+
+        request()->validate(['title' => 'required|max:255']);
+
 
         Test::create([
             'title' => request('title'),
             'description' => request('description'),
             'creator_id' => auth()->id(),
         ]);
+
+        session()->flash('message', 'You created a new test. Add some questions and answers to it!');
+
+        // TO:Do REDIREKCIJA NA KREIRANJE PITANJA I ODGOVORA!!!
+        // TO:Do REDIREKCIJA NA KREIRANJE PITANJA I ODGOVORA!!!
+        // TO:Do REDIREKCIJA NA KREIRANJE PITANJA I ODGOVORA!!!
+        // TO:Do REDIREKCIJA NA KREIRANJE PITANJA I ODGOVORA!!!
 
         return back();
     }
@@ -64,6 +72,6 @@ class TestsController extends Controller
  
     public function destroy(Test $test)
     {
-        dd('tests.destroy');        
+        dd('helloooooo');        
     }
 }

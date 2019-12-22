@@ -37,11 +37,14 @@
       </div>
       <div class="list-group list-group-flush">
         @if(auth()->user()->isAdmin())
-          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Make New Quiz</a>
+          <a href="{{ route('tests.create') }}" 
+            class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
+            New Quiz Topic
+          </a>
           <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Quiz Questions</a>
           <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Question Answers</a>
         @endif
-        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Start New Quiz</a>
+        <a href="{{ route('tests.index') }}" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">All Quizes</a>
         <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">My Results</a>
         @if(auth()->user()->isAdmin())
           <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Users</a>
@@ -86,6 +89,13 @@
           </ul>
         </div>
       </nav>
+
+      @if($flash = session('message'))
+        <div id="flash-message" class="alert alert-success" role="alert">
+          <p>{{ $flash }}</p>
+        </div>
+      @endif
+
 
       <div class="container-fluid">
         @yield('content')
