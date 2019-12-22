@@ -32,7 +32,13 @@ class QuestionsController extends Controller
    
     public function store(Request $request)
     {
-        //
+        $test = Test::findOrFail(request('test_id'));
+        $question = $test->addQuestion(request('query'));
+        $question->saveAnswers(request('answers'), request('correct'));
+
+        session()->flash('message', 'You created a new question with it\'s answers!');
+
+        return redirect()->route('questions.index');
     }
 
   

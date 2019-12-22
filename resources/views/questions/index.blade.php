@@ -59,7 +59,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="3">No quizes yet</td>
+                                    <td colspan="4">No questions yet</td>
                                 </tr>
                             @endif
                         </tbody>

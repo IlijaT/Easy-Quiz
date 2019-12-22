@@ -43,22 +43,22 @@
 
                                 <div class="form-group mt-4">
                                     <label for="solution1">Solution #1</label>
-                                    <input type="text" class="form-control" id="solution1" placeholder="Sloution..."  name="solution[1]" required>
+                                    <input type="text" class="form-control" id="solution1" placeholder="Sloution..."  name="answers[solution_1]" required>
                                 </div>
         
                                 <div class="form-group">
                                     <label for="solution2">Solution #2</label>
-                                    <input type="text" class="form-control" id="solution2" placeholder="Sloution..."  name="solution[2]" required>
+                                    <input type="text" class="form-control" id="solution2" placeholder="Sloution..."  name="answers[solution_2]" required>
                                 </div>
         
                                 <div class="form-group">
                                     <label for="solution3">Solution #3</label>
-                                    <input type="text" class="form-control" id="solution3" placeholder="Sloution..."  name="solution[3]" required>
+                                    <input type="text" class="form-control" id="solution3" placeholder="Sloution..."  name="answers[solution_3]" required>
                                 </div>
         
                                 <div class="form-group">
                                     <label for="solution3">Solution #4</label>
-                                    <input type="text" class="form-control" id="solution3" placeholder="Sloution..."  name="solution[4]" required>
+                                    <input type="text" class="form-control" id="solution3" placeholder="Sloution..."  name="answers[solution_4]" required>
                                 </div>
                             </div>
 
@@ -70,10 +70,10 @@
 
                                     <select class="form-control" id="correct" name="correct">
                                         <option selected disabled value="">Choose one...</option>
-                                        <option value="1">Solution #1</option>
-                                        <option value="2">Solution #2</option>
-                                        <option value="3">Solution #3</option>
-                                        <option value="3">Solution #4</option>
+                                        <option value="solution_1">Solution #1</option>
+                                        <option value="solution_2">Solution #2</option>
+                                        <option value="solution_3">Solution #3</option>
+                                        <option value="solution_4">Solution #4</option>
                                     </select>
                                 </div>
                             </div>
