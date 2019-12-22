@@ -32,11 +32,20 @@
 
     <!-- Sidebar -->
     <div class="lightseagreen border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading text-light font-weight-bold">Easy Quiz</div>
+      <div class="sidebar-heading text-light font-weight-bold">
+        <h2 style="text-shadow: 2px 2px tomato;" >Easy Quiz</h2>
+      </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light">Make New Quiz</a>
-        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light">All Quizes</a>
-        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light">Users</a>
+        @if(auth()->user()->isAdmin())
+          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Make New Quiz</a>
+          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Quiz Questions</a>
+          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Question Answers</a>
+        @endif
+        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Start New Quiz</a>
+        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">My Results</a>
+        @if(auth()->user()->isAdmin())
+          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Users</a>
+        @endif
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
