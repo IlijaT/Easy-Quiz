@@ -36,19 +36,21 @@
         <h2 style="text-shadow: 2px 2px tomato;" >Easy Quiz</h2>
       </div>
       <div class="list-group list-group-flush">
-        @if(auth()->user()->isAdmin())
-          <a href="{{ route('tests.create') }}" 
-            class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
-            New Quiz Topic
-          </a>
-          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Quiz Questions</a>
-          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Question Answers</a>
-        @endif
         <a href="{{ route('tests.index') }}" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">All Quizes</a>
         <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">My Results</a>
         @if(auth()->user()->isAdmin())
+          <a href="{{ route('tests.create') }}" 
+            class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
+            Add New Quiz
+          </a>
+          <a href="{{ route('questions.index') }}" 
+            class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
+            All Questions
+          </a>
+          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">All Answers</a>
           <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Users</a>
         @endif
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -57,7 +59,7 @@
     <div id="page-content-wrapper" style="background-color:aliceblue">
 
       <nav class="navbar navbar-expand-lg navbar-light lightseagreen border-bottom navbar-dark">
-        <button class="btn custom-button" id="menu-toggle">Toggle Menu</button>
+        <button class="btn custom-button custom-button-blue" id="menu-toggle">Toggle Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon "></span>

@@ -17,7 +17,7 @@ class TestsController extends Controller
     
     public function index()
     {
-        $tests = Test::all();
+        $tests = Test::latest()->get();
         return view('tests.index', compact('tests'));
     }
 
@@ -47,7 +47,7 @@ class TestsController extends Controller
      
     public function show(Test $test)
     {
-        dd('tests.show');        
+        return view('tests.show', compact('test'));
     }
 
  

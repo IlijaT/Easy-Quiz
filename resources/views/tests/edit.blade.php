@@ -29,7 +29,7 @@
                         </div>
                         
                         <div class="d-flex">
-                            <button type="submit" class="btn custom-button ml-auto px-5">Create</button>
+                            <button type="submit" class="btn custom-button ml-auto px-5">Edit</button>
                         </div>
 
                     </form>

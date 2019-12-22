@@ -25,14 +25,20 @@
                         <tbody>
                             @if (count($tests) > 0)
                                 @foreach ($tests as $test)
-                                    <tr data-entry-id="{{ $test->id }}">
+                                    <tr>
                                         <td>{{ $test->title }}</td>
 
                                         {{-- TO:DO $test->participants() --}}
                                         <td>33 (hardcoded)</td>
                                         <td>{{  $test->created_at->diffForHumans()  }}</td>
                                         <td class="d-flex justify-content-center">
-                                            <button href="{{ route('tests.show', [$test]) }}" class="btn custom-button  custom-button-blue mx-1">Start Quiz</button>
+                                            <a href="{{ route('tests.show', [$test]) }}"> 
+                                                <button href="{{ route('tests.show', [$test]) }}" 
+                                                    class="btn custom-button  custom-button-blue mx-1">
+                                                    Start Quiz
+                                                </button>
+                                            </a>
+
                                             @if(auth()->user()->isAdmin())
                                                 <a href="{{ route('tests.edit', [$test]) }}"> 
                                                     <button class="btn custom-button custom-button-green mx-1">
