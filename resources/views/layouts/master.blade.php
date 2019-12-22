@@ -90,14 +90,16 @@
         </div>
       </nav>
 
-      @if($flash = session('message'))
-        <div id="flash-message" class="alert alert-success" role="alert">
-          <p>{{ $flash }}</p>
-        </div>
-      @endif
 
 
       <div class="container-fluid">
+        
+        @if($flash = session('message'))
+          <div id="flash-message" class="alert alert-success mt-2" role="alert">
+            <p class="font-weight-bold">{{ $flash }}</p>
+          </div>
+        @endif
+
         @yield('content')
       </div>
     </div>

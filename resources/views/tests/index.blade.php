@@ -10,8 +10,6 @@
                     <h2 class="text-center">All Quizes</h2>
                 </div>
 
-                <hr>
-
                 <div class="mt-4">
 
                     <table class="table table-bordered table-striped {{ count($tests) > 0 ? 'datatable' : '' }} dt-select">
@@ -34,11 +32,14 @@
                                         <td>33 (hardcoded)</td>
                                         <td>{{  $test->created_at->diffForHumans()  }}</td>
                                         <td class="d-flex justify-content-center">
-                                            <button href="{{ route('tests.show', [$test->id]) }}" class="btn custom-button  custom-button-blue mx-1">Start Quiz</button>
+                                            <button href="{{ route('tests.show', [$test]) }}" class="btn custom-button  custom-button-blue mx-1">Start Quiz</button>
                                             @if(auth()->user()->isAdmin())
-                                                <button href="{{ route('tests.edit', [$test->id]) }}" class="btn custom-button custom-button-green mx-1">Edit</button>
-
-                                                <form class="mx-1" action="{{ route('tests.destroy', [$test->id]) }}" method="POST">
+                                                <a href="{{ route('tests.edit', [$test]) }}"> 
+                                                    <button class="btn custom-button custom-button-green mx-1">
+                                                        Edit
+                                                    </button>
+                                                </a>
+                                                <form class="mx-1" action="{{ route('tests.destroy', [$test]) }}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button class="btn custom-button" type="submit">Delete</button>

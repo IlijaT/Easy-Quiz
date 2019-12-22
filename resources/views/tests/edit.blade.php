@@ -6,21 +6,26 @@
         <div class="col-md-12">
             <div class="card aliceblue" style="border:none">
                 <div>
-                   <h2 class="text-center">Create New Quiz Topic</h2>
+                   <h2 class="text-center">Edit Quiz Topic</h2>
                 </div>
-
+                
                 <div class="mt-4">
                    
-                    <form method="POST" action="{{ route('tests.store') }}">
+                    <form method="POST" action="{{ route('tests.update', [$test]) }}">
+                        @method('PATCH')
                         @csrf
                         <div class="form-group">
-                            <label for="title">Quiz topic</label>
-                            <input value="{{ old('title') }}" type="text" class="form-control" id="title" placeholder="Quiz topic..." name="title" required>
+                            <label for="title">Quiz title</label>
+                            <input value="{{ old('title', $test->title ) }}" type="text" class="form-control" id="title" placeholder="Quiz title..." name="title" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="desc">Quiz descrition</label>
-                            <textarea class="form-control" id="desc" rows="5" name="description" placeholder="Short description about test...">{{ old('description') }}</textarea>
+                            <textarea class="form-control" 
+                                id="desc" rows="5" 
+                                name="description" 
+                                placeholder="Short description about test...">{{ old('description', $test->description ) }}
+                            </textarea>
                         </div>
                         
                         <div class="d-flex">
