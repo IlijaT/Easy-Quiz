@@ -17,11 +17,11 @@
                         
                         <div class="form-group">
                             <label for="quiz">Select a quiz to which you want to add a new question</label>
-                            <select class="form-control" id="quiz" name="test_id">
+                            <select class="form-control" id="quiz" name="test_id" required>
                                 <option selected disabled value="">Choose one...</option>
                                 @foreach($tests as $test)
                                     <option {{ request('test_id') ? 'selected' : '' }} 
-                                        value="{{ old('test_id', $test->id) }}">
+                                        value="{{ old('test_id', $test->id) }} ">
                                         {{ $test->title }}
                                     </option>
                                 @endforeach
@@ -43,22 +43,22 @@
 
                                 <div class="form-group mt-4">
                                     <label for="solution1">Solution #1</label>
-                                    <input type="text" class="form-control" id="solution1" placeholder="Sloution..."  name="answers[solution_1]" required>
+                                    <input value="{{ old('answers[solution_1]') }}" type="text" class="form-control" id="solution1" placeholder="Sloution..."  name="answers[solution_1]" required>
                                 </div>
         
                                 <div class="form-group">
                                     <label for="solution2">Solution #2</label>
-                                    <input type="text" class="form-control" id="solution2" placeholder="Sloution..."  name="answers[solution_2]" required>
+                                    <input value="{{ old('answers[solution_2]') }}" type="text" class="form-control" id="solution2" placeholder="Sloution..."  name="answers[solution_2]" required>
                                 </div>
         
                                 <div class="form-group">
                                     <label for="solution3">Solution #3</label>
-                                    <input type="text" class="form-control" id="solution3" placeholder="Sloution..."  name="answers[solution_3]" required>
+                                    <input value="{{ old('answers[solution_3]') }}" type="text" class="form-control" id="solution3" placeholder="Sloution..."  name="answers[solution_3]" required>
                                 </div>
         
                                 <div class="form-group">
-                                    <label for="solution3">Solution #4</label>
-                                    <input type="text" class="form-control" id="solution3" placeholder="Sloution..."  name="answers[solution_4]" required>
+                                    <label for="solution4">Solution #4</label>
+                                    <input value="{{ old('answers[solution_4]') }}" type="text" class="form-control" id="solution4" placeholder="Sloution..."  name="answers[solution_4]" required>
                                 </div>
                             </div>
 
@@ -68,7 +68,7 @@
                                 <div class="form-group mt-4">
                                     <label for="correct">Select correct answer</label>
 
-                                    <select class="form-control" id="correct" name="correct">
+                                    <select class="form-control" id="correct" name="correct" required>
                                         <option selected disabled value="">Choose one...</option>
                                         <option value="solution_1">Solution #1</option>
                                         <option value="solution_2">Solution #2</option>

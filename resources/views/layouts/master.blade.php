@@ -94,7 +94,7 @@
 
 
 
-      <div class="container-fluid">
+      <div id="app" class="container-fluid">
         
         @if($flash = session('message'))
           <div id="flash-message" class="alert alert-success mt-2" role="alert">

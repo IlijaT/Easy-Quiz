@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Test;
 use App\Question;
 use Illuminate\Http\Request;
+use App\Http\Requests\QuestionFormRequest;
 
 class QuestionsController extends Controller
 {
@@ -30,7 +31,7 @@ class QuestionsController extends Controller
     }
 
    
-    public function store(Request $request)
+    public function store(QuestionFormRequest $request)
     {
         $test = Test::findOrFail(request('test_id'));
         $question = $test->addQuestion(request('query'));
@@ -50,13 +51,28 @@ class QuestionsController extends Controller
    
     public function edit(Question $question)
     {
-        //
+        $tests = Test::all();
+        $question->load('answers');
+
+        return view('questions.edit', compact('question', 'tests'));
     }
 
   
-    public function update(Request $request, Question $question)
+    public function update(QuestionFormRequest $request, Question $question)
     {
-        //
+        $question->update([
+            'test_id' => request('test_id'),
+            'query' => request('query'),
+        ]);
+
+        $question->answers()->delete();
+
+        $question->saveAnswers(request('answers'), request('correct'));
+
+        session()->flash('message', 'You updated a question with it\'s answers!');
+
+        return redirect()->route('questions.index');
+
     }
 
   
