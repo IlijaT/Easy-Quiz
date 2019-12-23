@@ -17,6 +17,7 @@ class CreateTestUserTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('test_id');
             $table->unsignedBigInteger('user_id');
+            $table->double('score', 8, 2);
 
             $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

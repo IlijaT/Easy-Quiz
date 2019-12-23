@@ -16,9 +16,9 @@ class UserTestsController extends Controller
     public function store() 
     {
         //dd(request('questions')); 
-        auth()->user()->submitAnswers(request('questions'));
+        $score = auth()->user()->submitAnswers(request('questions'));
 
-        session()->flash('message', 'You finished your test!');
+        session()->flash('message', "You have $score% right answers!");
 
         return redirect()->route('tests.index');
 
