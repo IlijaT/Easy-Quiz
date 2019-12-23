@@ -37,7 +37,7 @@
       </div>
       <div class="list-group list-group-flush">
         <a href="{{ route('tests.index') }}" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">All Quizes</a>
-        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">My Results</a>
+        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Results</a>
         @if(auth()->user()->isAdmin())
           <a href="{{ route('tests.create') }}" 
             class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">

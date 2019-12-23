@@ -21,4 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('tests', 'TestsController'); 
 Route::resource('questions', 'QuestionsController'); 
- 
+
+Route::post('user/tests', 'UserTestsController@store')->name('user.test.store'); 
+

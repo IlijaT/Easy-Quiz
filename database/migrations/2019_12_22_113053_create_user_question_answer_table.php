@@ -16,10 +16,12 @@ class CreateUserQuestionAnswerTable extends Migration
         Schema::create('user_question_answer', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('question_answer_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->foreign('question_answer_id')->references('id')->on('question_answers')->onDelete('cascade');
 
 

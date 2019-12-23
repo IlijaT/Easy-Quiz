@@ -38,15 +38,35 @@ class User extends Authenticatable
     ];
 
     public function role() 
-    
     {
         return $this->belongsTo(Role::class);
     
     }
 
+    public function questionAnswers()
+    {
+        return $this->belongsToMany('App\QuestionAnswer', 'user_question_answer')->withTimestamps();
+    }
+
+    // tests that user participate in
+    public function tests()
+    {
+        return $this->belongsToMany('App\Test', 'test_user')->withTimestamps();;
+    }
+
+
+
+    public function submitAnswers($questionWithAnswers) 
+    {
+        foreach ($questionWithAnswers as $questionId => $answerId) {
+            $this->questionAnswers()->attach($answerId, ['question_id' => $questionId]);
+        }
+
+        // to do finish TEST
+    }
+
 
     public function isAdmin() 
-    
     {
         if(! $this->role) {
             return false;
