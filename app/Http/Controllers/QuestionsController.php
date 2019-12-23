@@ -18,7 +18,7 @@ class QuestionsController extends Controller
     
     public function index()
     {
-        $questions = Question::latest()->get();
+        $questions = Question::latest()->paginate(20);
         return view('questions.index', compact('questions'));
     }
 
@@ -78,6 +78,10 @@ class QuestionsController extends Controller
   
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
+        
+        session()->flash('message', 'You deleted a question with it\'s answers!');
+
+        return redirect()->route('questions.index');
     }
 }

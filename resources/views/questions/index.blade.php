@@ -64,6 +64,7 @@
                             @endif
                         </tbody>
                     </table>
+                    {{ $questions->links() }}
                 </div>
             </div>
         </div>
