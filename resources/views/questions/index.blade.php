@@ -38,21 +38,21 @@
                                     <tr>
                                         <td>{{ $question->query }}</td>
 
-                                        {{-- TO:DO $question->participants() --}}
                                         <td>{{ $question->test->title }}</td>
                                         <td>{{  $question->created_at->diffForHumans()  }}</td>
-                                        <td class="d-flex justify-content-center">
-                                             
-                                            <a href="{{ route('questions.edit', [$question]) }}"> 
-                                                <button class="btn custom-button custom-button-blue mx-1">
-                                                    Edit
-                                                </button>
-                                            </a>
-                                            <form class="mx-1" action="{{ route('questions.destroy', [$question]) }}" method="POST">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button class="btn custom-button" type="submit">Delete</button>
-                                            </form>
+                                        <td>
+                                            <div  class="d-flex justify-content-center">
+                                                <a href="{{ route('questions.edit', [$question]) }}"> 
+                                                    <button class="btn custom-button custom-button-blue mx-1">
+                                                        Edit
+                                                    </button>
+                                                </a>
+                                                <form class="mx-1" action="{{ route('questions.destroy', [$question]) }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button class="btn custom-button" type="submit">Delete</button>
+                                                </form>
+                                            </div>
                                             
                                         </td>
                                     </tr>

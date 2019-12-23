@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Test;
 
 class TestSeeder extends Seeder
 {
@@ -11,6 +12,10 @@ class TestSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Test::create([
+            'title' => 'Geography quiz 1',
+            'description' => 'Level Medium',
+            'creator_id' => 1
+        ]);
     }
 }
