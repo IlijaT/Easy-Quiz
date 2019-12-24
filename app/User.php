@@ -51,7 +51,7 @@ class User extends Authenticatable
     // tests that user participate in
     public function tests()
     {
-        return $this->belongsToMany('App\Test', 'test_user')->withTimestamps();;
+        return $this->belongsToMany('App\Test', 'test_user')->withTimestamps();
     }
 
 

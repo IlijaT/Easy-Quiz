@@ -13,9 +13,10 @@
                 <div class="mt-4">
 
                     <table class="table table-bordered table-striped {{ count($tests) > 0 ? 'datatable' : '' }} dt-select">
-                        <thead>
+                        <thead class="text-light" style="background-color:grey">
                             <tr>
                                 <th>Quiz title</th>
+                                <th>Number of questions</th>
                                 <th>Participans</th>
                                 <th>Created</th>
                                 <th class="text-center">Action</th>
@@ -27,9 +28,8 @@
                                 @foreach ($tests as $test)
                                     <tr>
                                         <td>{{ $test->title }}</td>
-
-                                        {{-- TO:DO $test->participants() --}}
-                                        <td>33 (hardcoded)</td>
+                                        <td>{{ $test->questions->count() }}</td>
+                                        <td>{{ $test->numberOfParticipants() }}</td>
                                         <td>{{  $test->created_at->diffForHumans()  }}</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{ route('tests.show', [$test]) }}"> 
@@ -45,6 +45,12 @@
                                                         Edit
                                                     </button>
                                                 </a>
+                                                <a href="{{ route('questions.create', ['quizId' => $test->id]) }}"> 
+                                                    <button class="btn custom-button  custom-button-blue mx-1">
+                                                        Add New Question
+                                                    </button>
+                                                </a>
+
                                                 <form class="mx-1" action="{{ route('tests.destroy', [$test]) }}" method="POST">
                                                     @method('DELETE')
                                                     @csrf

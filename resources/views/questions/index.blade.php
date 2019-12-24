@@ -23,7 +23,7 @@
                 <div class="mt-4">
 
                     <table class="table table-bordered table-striped {{ count($questions) > 0 ? 'datatable' : '' }} dt-select">
-                        <thead>
+                        <thead class="text-light" style="background-color:grey">
                             <tr>
                                 <th>Question text</th>
                                 <th>Quiz title</th>

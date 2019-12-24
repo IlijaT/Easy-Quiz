@@ -20,7 +20,7 @@
                             <select class="form-control" id="quiz" name="test_id" required>
                                 <option selected disabled value="">Choose one...</option>
                                 @foreach($tests as $test)
-                                    <option {{ request('test_id') ? 'selected' : '' }} 
+                                    <option {{ request('quizId') == $test->id ? 'selected' : '' }} 
                                         value="{{ old('test_id', $test->id) }} ">
                                         {{ $test->title }}
                                     </option>

@@ -39,7 +39,7 @@ class QuestionsController extends Controller
 
         session()->flash('message', 'You created a new question with it\'s answers!');
 
-        return redirect()->route('questions.index');
+        return redirect()->route('tests.index');
     }
 
   

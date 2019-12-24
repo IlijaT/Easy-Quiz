@@ -29,5 +29,18 @@ class Test extends Model
         return $this->questions->count();
     }
 
+    // users that participate in test
+    public function users()
+    {
+        return $this->belongsToMany('App\Test', 'test_user')->withTimestamps();;
+    }
+
+
+    public function numberOfParticipants() 
+    {
+        return $this->users->count();
+    
+    }
+
     
 }

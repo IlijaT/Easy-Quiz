@@ -18,6 +18,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    {{-- font awesome icons --}}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -36,8 +38,12 @@
         <h2 style="text-shadow: 2px 2px tomato;" >Easy Quiz</h2>
       </div>
       <div class="list-group list-group-flush">
-        <a href="{{ route('tests.index') }}" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">All Quizes</a>
-        <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Results</a>
+        <a href="{{ route('tests.index') }}" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
+          All Quizes
+        </a>
+        <a href="{{ route('results.index') }}" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
+          Results
+        </a>
         @if(auth()->user()->isAdmin())
           <a href="{{ route('tests.create') }}" 
             class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
@@ -47,7 +53,9 @@
             class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
             All Questions
           </a>
-          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">Users</a>
+          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
+            Users
+          </a>
         @endif
 
       </div>
@@ -74,7 +82,6 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a>
-                <a class="dropdown-item" href="#">Profile</a>
                 <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
