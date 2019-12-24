@@ -118,6 +118,12 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+
+    $(document).ready(function(){
+          $(".alert-success").slideDown(300).delay(5000).slideUp(300);
+    });
+   
+
   </script>
 
 </body>

@@ -23,5 +23,11 @@ class Test extends Model
     
     }
 
+    public function numberOfQuestions() 
+    {
+
+        return $this->questions->count();
+    }
+
     
 }

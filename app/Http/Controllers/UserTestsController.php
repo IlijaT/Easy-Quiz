@@ -15,6 +15,13 @@ class UserTestsController extends Controller
 
     public function store() 
     {
+        //dd(request()->all());
+
+        request()->validate([
+            'questions' => ["required","array","min:1"],
+        ], [
+           'questions.*' => 'You must give at least one answer!' 
+        ]);
         //dd(request('questions')); 
         $score = auth()->user()->submitAnswers(request('questions'));
 
