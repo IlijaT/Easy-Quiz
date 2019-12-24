@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="mt-4">
-
+                   
                     <table class="table table-bordered table-striped {{ count($results) > 0 ? 'datatable' : '' }} dt-select">
                         <thead class="text-light" style="background-color:grey">
                             <tr>
@@ -34,7 +34,7 @@
                                         <td>{{ $result->score }}%</td>
                                         <td>{{  $result->created_at->format('d.m.Y H:i')  }}</td>
                                         <td class="d-flex justify-content-center">
-                                            <h4><a href="http://"><i class="fa fa-eye"></i></a></h4>
+                                            <h4><a href="{{ route('results.show', ['id' => $result->id]) }}"><i class="fa fa-eye"></i></a></h4>
                                         </td>
                                     </tr>
                                 @endforeach

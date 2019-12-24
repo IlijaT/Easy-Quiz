@@ -23,5 +23,7 @@ Route::resource('tests', 'TestsController');
 Route::resource('questions', 'QuestionsController'); 
 
 Route::post('user/tests', 'UserTestsController@store')->name('user.test.store'); 
+
 Route::get('results', 'ResultsController@index')->name('results.index'); 
+Route::get('results/{id}', 'ResultsController@show')->name('results.show'); 
 

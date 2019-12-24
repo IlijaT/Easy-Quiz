@@ -14,7 +14,6 @@ class ResultsController extends Controller
 
     }
 
-
     public function index() 
     {
         if(auth()->user()->isAdmin()) {
@@ -24,5 +23,14 @@ class ResultsController extends Controller
         }
 
         return view('results.index', compact('results'));
+    }
+
+    public function show($id) 
+    {
+        $result = Result::findOrFail($id);
+
+        $this->authorize('view', $result);
+         
+        return view('results.show', compact('result'));
     }
 }
