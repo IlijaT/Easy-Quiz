@@ -17,9 +17,9 @@ class ResultsController extends Controller
     public function index() 
     {
         if(auth()->user()->isAdmin()) {
-            $results = Result::orderBy('score', 'desc')->get();
+            $results = Result::orderBy('score', 'desc')->paginate(10);
         } else {
-            $results = Result::where('user_id', auth()->id())->orderBy('score', 'desc')->get();
+            $results = Result::where('user_id', auth()->id())->orderBy('score', 'desc')->paginate(10);
         }
 
         return view('results.index', compact('results'));

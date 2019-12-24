@@ -45,6 +45,9 @@
                             @endif
                         </tbody>
                     </table>
+                    @if($results->count())
+                        {{ $results->links() }}
+                    @endif
                 </div>
             </div>
         </div>

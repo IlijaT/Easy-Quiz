@@ -64,7 +64,9 @@
                             @endif
                         </tbody>
                     </table>
-                    {{ $questions->links() }}
+                    @if($questions->count())
+                        {{ $questions->links() }}
+                    @endif
                 </div>
             </div>
         </div>
