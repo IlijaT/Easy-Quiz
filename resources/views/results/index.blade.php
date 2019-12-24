@@ -34,13 +34,6 @@
                                         <td>{{ $result->score }}%</td>
                                         <td>{{  $result->created_at->format('d.m.Y H:i')  }}</td>
                                         <td class="d-flex justify-content-center">
-                                            {{-- <a href="{{ route('tests.show', [$test]) }}"> 
-                                                <button href="{{ route('tests.show', [$test]) }}" 
-                                                    class="btn custom-button  custom-button-blue mx-1">
-                                                    Start Quiz
-                                                </button>
-                                            </a> --}}
-
                                             <h4><a href="http://"><i class="fa fa-eye"></i></a></h4>
                                         </td>
                                     </tr>

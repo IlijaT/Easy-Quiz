@@ -34,19 +34,19 @@
                                         <td class="d-flex justify-content-center">
                                             <a href="{{ route('tests.show', [$test]) }}"> 
                                                 <button href="{{ route('tests.show', [$test]) }}" 
-                                                    class="btn custom-button  custom-button-blue mx-1">
+                                                    class="btn custom-button  custom-button-green mx-1">
                                                     Start Quiz
                                                 </button>
                                             </a>
 
                                             @if(auth()->user()->isAdmin())
                                                 <a href="{{ route('tests.edit', [$test]) }}"> 
-                                                    <button class="btn custom-button custom-button-green mx-1">
+                                                    <button class="btn custom-button custom-button-blue mx-1">
                                                         Edit
                                                     </button>
                                                 </a>
                                                 <a href="{{ route('questions.create', ['quizId' => $test->id]) }}"> 
-                                                    <button class="btn custom-button  custom-button-blue mx-1">
+                                                    <button class="btn custom-button  custom-button-green mx-1">
                                                         Add New Question
                                                     </button>
                                                 </a>
