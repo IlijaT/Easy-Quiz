@@ -17,5 +17,11 @@ class TestSeeder extends Seeder
             'description' => 'Level Medium',
             'creator_id' => 1
         ]);
+
+        Test::create([
+            'title' => 'Film quiz',
+            'description' => 'Easy Level',
+            'creator_id' => 1
+        ]);
     }
 }
