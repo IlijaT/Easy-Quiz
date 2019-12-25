@@ -59,18 +59,21 @@ class User extends Authenticatable
     public function submitAnswers($questionWithAnswers) 
     {
 
+        $test = Question::findOrFail(array_key_first($questionWithAnswers))->test;
         $numberOfCorrectAnswers = 0;
         
         foreach ($questionWithAnswers as $questionId => $answerId) {
-            if (QuestionAnswer::find($answerId)->is_correct) {
-                $numberOfCorrectAnswers ++;
-            }
             
-            $this->questionAnswers()->attach($answerId, ['question_id' => $questionId]);
+            if (QuestionAnswer::find($answerId)->is_correct) $numberOfCorrectAnswers ++;
+            
+            $this->questionAnswers()->attach($answerId, 
+                [
+                    'question_id' => $questionId,
+                    'test_id' => $test->id
+                ]);
         }
         
         $numberOfQuestions = count($questionWithAnswers);
-        $test = Question::findOrFail(array_key_first($questionWithAnswers))->test;
         $score = ($numberOfCorrectAnswers / $test->numberOfQuestions()) * 100;
         $this->tests()->attach($test->id, ['score' => $score]);
         

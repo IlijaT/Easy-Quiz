@@ -27,10 +27,12 @@ class ResultsController extends Controller
 
     public function show($id) 
     {
-        $result = Result::findOrFail($id);
+        $result = Result::findOrFail($id)->load('test', 'user');
+
+        $userAnswers = $result->user->questionAnswers()->where('test_id', $result->test_id)->get();
 
         $this->authorize('view', $result);
          
-        return view('results.show', compact('result'));
+        return view('results.show', compact('result', 'userAnswers'));
     }
 }

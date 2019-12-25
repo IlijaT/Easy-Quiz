@@ -103,7 +103,12 @@
       <div id="app" class="container-fluid">
         
         @if($flash = session('message'))
-          <div id="flash-message" class="alert alert-success mt-2" role="alert">
+          <div class="flash-message alert alert-success mt-2" role="alert">
+            <p class="font-weight-bold">{{ $flash }}</p>
+          </div>
+        @endif
+        @if($flash = session('error'))
+          <div class="flash-message alert alert-danger mt-2" role="alert">
             <p class="font-weight-bold">{{ $flash }}</p>
           </div>
         @endif
@@ -127,7 +132,7 @@
     });
 
     $(document).ready(function(){
-          $(".alert-success").slideDown(300).delay(5000).slideUp(300);
+          $(".flash-message").slideDown(300).delay(5000).slideUp(300);
     });
    
 

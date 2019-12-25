@@ -47,6 +47,11 @@ class TestsController extends Controller
      
     public function show(Test $test)
     {
+        if(auth()->user()->tests->contains('id', $test->id)) {
+            session()->flash('error', 'You have already done this test!');
+            return back();
+        }
+
         return view('tests.show', compact('test'));
     }
 
