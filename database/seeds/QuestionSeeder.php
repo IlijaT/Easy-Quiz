@@ -56,7 +56,6 @@ class QuestionSeeder extends Seeder
             'query' => 'Who is director of “Schindler’s List”?',
             'test_id' => 2
         ]);
-
         
         $movieQuestion1->saveAnswers(['Martin Scorsese', 'Steven Spielberg', 'Terrence Malick', 'David Lynch'], 1);
         
@@ -86,8 +85,45 @@ class QuestionSeeder extends Seeder
             'query' => 'Which movie was Edward Norton in?',
             'test_id' => 2
         ]);
+
         $movieQuestion5->saveAnswers(['Fight Club', 'The Big Lebowski', 'The Sixth Sense', 'Jurassic Park'], 0);
  
+
+        // Questions about Serbia
+        $serbiaQuestion1 = Question::create([
+            'query' => 'The most famous Serbian word that is accepted and used across the world is?',
+            'test_id' => 3
+        ]);
+
+        $serbiaQuestion1->saveAnswers(['Burek', 'Sarma', 'Vampir', 'Rakija'], 2);
+
+        $serbiaQuestion2 = Question::create([
+            'query' => 'Nobel prize winner from Serbia is?',
+            'test_id' => 3
+        ]);
+
+        $serbiaQuestion2->saveAnswers(['Ivo Andric', 'Mesa Selimovic', 'Goran Vesic', 'Momo Kapor'], 0);
+
+        $serbiaQuestion3 = Question::create([
+            'query' => 'Serbia is the largest exporter of?',
+            'test_id' => 3
+        ]);
+
+        $serbiaQuestion3->saveAnswers(['apple', 'blackberry', 'raspberry', 'strawberry'], 2);
+
+        $serbiaQuestion4 = Question::create([
+            'query' => 'The most famous Serbian tennis player is?',
+            'test_id' => 3
+        ]);
+
+        $serbiaQuestion4->saveAnswers(['Nikola Jokic', 'Predrag Strajnic', 'Novak Djokovic', 'Radmilo Armenulic'], 2);
+
+        $serbiaQuestion5 = Question::create([
+            'query' => 'The most favorite drink in Serbia is?',
+            'test_id' => 3
+        ]);
+
+        $serbiaQuestion5->saveAnswers(['Coca Cola', 'Orange Juice', 'Apple Juice', 'Rakija'], 3);
         
 
     }

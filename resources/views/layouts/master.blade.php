@@ -53,9 +53,6 @@
             class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
             All Questions
           </a>
-          <a href="#" class="list-group-item list-group-item-action lightseagreen text-light font-weight-bold">
-            Users
-          </a>
         @endif
 
       </div>

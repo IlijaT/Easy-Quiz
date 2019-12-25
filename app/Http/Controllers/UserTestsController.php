@@ -24,8 +24,8 @@ class UserTestsController extends Controller
         ]);
         //dd(request('questions')); 
         $score = auth()->user()->submitAnswers(request('questions'));
-
-        session()->flash('message', "You have $score% right answers!");
+        
+        session()->flash('message', 'You have '.  number_format($score,2) . '% right answers!');
 
         return redirect()->route('tests.index');
 

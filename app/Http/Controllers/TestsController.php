@@ -39,7 +39,7 @@ class TestsController extends Controller
             'creator_id' => auth()->id(),
         ]);
 
-        session()->flash('message', 'You created a new quiz topic. Add some questions and answers to it!');
+        session()->flash('message', 'You created a new quiz. Add some questions and answers!');
 
         return redirect()->route('tests.index');
     }
@@ -48,7 +48,7 @@ class TestsController extends Controller
     public function show(Test $test)
     {
         if(auth()->user()->tests->contains('id', $test->id)) {
-            session()->flash('error', 'You have already done this test!');
+            session()->flash('error', 'You have already done this quiz!');
             return back();
         }
 
@@ -67,7 +67,7 @@ class TestsController extends Controller
     {
         request()->validate(['title' => 'required|max:255']);
 
-        Test::create([
+        $test->update([
             'title' => request('title'),
             'description' => request('description'),
             'creator_id' => auth()->id(),
@@ -86,7 +86,7 @@ class TestsController extends Controller
 
         $test->delete();
 
-        session()->flash('message', 'Test has been deleted!');
+        session()->flash('message', 'Quiz has been deleted!');
         return back();
 
     }

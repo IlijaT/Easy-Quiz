@@ -13,7 +13,7 @@ class TestSeeder extends Seeder
     public function run()
     {
         Test::create([
-            'title' => 'Geography quiz 1',
+            'title' => 'Geography quiz',
             'description' => 'Level Medium',
             'creator_id' => 1
         ]);
@@ -21,6 +21,12 @@ class TestSeeder extends Seeder
         Test::create([
             'title' => 'Film quiz',
             'description' => 'Easy Level',
+            'creator_id' => 1
+        ]);
+
+        Test::create([
+            'title' => 'Quiz About Serbia',
+            'description' => 'Interesting quiz about Serbia',
             'creator_id' => 1
         ]);
     }
